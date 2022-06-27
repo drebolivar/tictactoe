@@ -4,7 +4,7 @@ const tiles = document.querySelectorAll('.tile')
 const xPlayer = 'X'
 const oPlayer = 'O'
 let turn = xPlayer
-
+let turnCounter = 0
 const boardState = Array(tiles.length)
 boardState.fill(null)
 
@@ -27,7 +27,7 @@ function tileClick(event) {
   if (tile.innerText != '') {
     return
   }
-
+  turnCounter = turnCounter + 1
   if (turn === xPlayer) {
     tile.innerText = xPlayer
     boardState[tileNumber] = xPlayer
@@ -37,8 +37,9 @@ function tileClick(event) {
     boardState[tileNumber] = oPlayer
     turn = xPlayer
   }
-  console.log(turn)
+  console.log(turnCounter)
   checkWinner()
+  checkTie()
 }
 
 function checkWinner() {
@@ -58,13 +59,18 @@ function checkWinner() {
   }
 }
 //draw
-function tieGame() {
-  text = 'Tie game? How whack'
-  results.className = 'visible'
-  resultsText.innerText = text
+function checkTie() {
+  if (turnCounter >= 9) {
+    text = 'Tie game? How whack'
+    results.className = 'visible'
+    resultsText.innerText = text
+  } else {
+    return
+  }
 }
 
 function gameOver() {
+  turnCounter = 0
   if (turn == 'O') {
     text = 'Winner is X!'
   } else {
@@ -75,6 +81,7 @@ function gameOver() {
 }
 
 function startNew() {
+  turnCounter = 0
   results.className = 'hidden'
   boardState.fill(null)
   tiles.forEach((tile) => (tile.innerText = ''))
