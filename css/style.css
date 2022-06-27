@@ -1,58 +1,40 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-
-h1 {
-    color: rgb(0, 255, 204)
-}
-/* .title {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-    margin-top: 10%;
-    justify-content: center;
-    align-items: center;
-} */
-
-.container {
-    padding: 40px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+body {
     background-color: indigo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#gameboard {
-    width: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 40px;
+#board {
+    background-color: rgb(120, 241, 153);
+    display: grid;
+    grid-template-columns: 100px  100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    cursor: pointer
 }
-/* .display {
-    color: white;
-    font-size: 25px;
+
+.tile{
+    color:red;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 5px black;
+}
+
+#finishGame {
     text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-} */
+    margin: 50px;
+    border: solid 5px black;
+    padding: 50px;
+    width:50%;
+}
+/* hides game over screen */
 
-
-.box {
-    border: 1px solid rgb(0, 255, 204);
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 120px;
-    cursor: pointer;
+.hidden {
+    display: none;
 }
 
-.button {
-    justify-content: center;
-    align-items: center;
+.visible{
+    display: block
 }
