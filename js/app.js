@@ -3,24 +3,25 @@
 const tiles = document.querySelectorAll('.tile')
 const xPlayer = 'X'
 const oPlayer = 'O'
-let turn = xPlayer
-let turnCounter = 0
-const boardState = Array(tiles.length)
-boardState.fill(null)
-
-//Elements
 const results = document.getElementById('finishGame')
 const resultsText = document.getElementById('finishText')
 const reset = (document.getElementById('restart').onclick = startNew)
+const boardState = Array(tiles.length)
+boardState.fill(null)
+let turn = xPlayer
+let turnCounter = 0
 
+//Sounds
+const victory = new Audio('assets/Victory.mp3')
+const wark = new Audio('assets/Wark.mp3')
 ////////////////////////////////
 // Functions For Game Logic Here
 
+//Click Fuction
 function tileClick(event) {
   if (results.classList.contains('visible')) {
     return
   }
-
   const tile = event.target
   const tileNumber = tile.dataset.index
 
@@ -37,11 +38,13 @@ function tileClick(event) {
     boardState[tileNumber] = oPlayer
     turn = xPlayer
   }
+
   console.log(turnCounter)
   checkWinner()
   checkTie()
 }
 
+//Checks for winner
 function checkWinner() {
   for (const winningCombination of winningCombinations) {
     const combo = winningCombination.combo
@@ -58,28 +61,33 @@ function checkWinner() {
     }
   }
 }
-//draw
+
+//Checks for a tie
 function checkTie() {
   if (turnCounter >= 9) {
-    text = 'Tie game? How whack'
+    text = 'All members have passed out'
     results.className = 'visible'
     resultsText.innerText = text
+    wark.play()
   } else {
     return
   }
 }
 
+//Reveals winner
 function gameOver() {
   turnCounter = 0
   if (turn == 'O') {
-    text = 'Winner is X!'
+    text = 'X defeats O!'
   } else {
-    text = 'Winner is O!'
+    text = 'O defeats X!'
   }
   results.className = 'visible'
   resultsText.innerText = text
+  victory.play()
 }
 
+//Restarts game
 function startNew() {
   turnCounter = 0
   results.className = 'hidden'
@@ -89,6 +97,7 @@ function startNew() {
   results
 }
 
+//Winning Combos
 const winningCombinations = [
   { combo: [0, 1, 2] },
   { combo: [3, 4, 5] },

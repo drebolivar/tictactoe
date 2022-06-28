@@ -1,14 +1,14 @@
 body {
     background-color: indigo;
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-direction:column;
     align-items: center;
     font-family: 'VT323', monospace;
 }
 
 h1 {
     font-size: 50px;
-    color: orangered;
+    color: coral;
 }
 #board {
     background-color: rgb(120, 241, 153);
@@ -24,19 +24,20 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 5px black;
+    border: solid 3px black;
 }
 
 /* game over screen/reset button */
 
 #finishGame {
     text-align: center;
-    margin: 5px;
-    border: solid 5px #545454;
+    margin: 40px;
+    border: solid 3px silver;
+    border-radius: 3%;
     background: blue;
     color:azure;
     padding: 25px;
-    width: 300px;
+    width: 250px;
     font-size: 25px;
 }
 
