@@ -1,5 +1,4 @@
-////////////////////////////////
-// Global Variables Here
+// Global Variables
 const tiles = document.querySelectorAll('.tile')
 const xPlayer = 'X'
 const oPlayer = 'O'
@@ -14,8 +13,6 @@ let turnCounter = 0
 //Sounds
 const victory = new Audio('assets/Victory.mp3')
 const wark = new Audio('assets/Wark.mp3')
-////////////////////////////////
-// Functions For Game Logic Here
 
 //Click Fuction
 function tileClick(event) {
@@ -38,8 +35,6 @@ function tileClick(event) {
     boardState[tileNumber] = oPlayer
     turn = xPlayer
   }
-
-  console.log(turnCounter)
   checkWinner()
   checkTie()
 }
@@ -108,7 +103,6 @@ const winningCombinations = [
   { combo: [0, 4, 8] },
   { combo: [2, 4, 6] }
 ]
-////////////////////////////////
-// Event Listeners Here
-////////////////////////////////
+
+// Event Listeners
 tiles.forEach((tile) => tile.addEventListener('click', tileClick))
