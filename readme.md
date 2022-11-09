@@ -22,4 +22,4 @@ First foray into coding, a simple tic tac toe game.
 
 ## **_Stretch Goals_**
 
-- [] More Final Fantasy * a e s t h e t i c *
+- [ ] More Final Fantasy * a e s t h e t i c *
