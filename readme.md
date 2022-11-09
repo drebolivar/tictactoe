@@ -9,16 +9,18 @@
 First foray into coding, a simple tic tac toe game.
 
 ---
-
 ## **_Technologies Used_**
-
 - Javascript
+  
 ---
+## **_Resources_**
+- [Github Repo](https://github.com/drebolivar/tictactoe)
+- [Deployed Site](https://dretictactoe.surge.sh/)
 
+---
+## **_Stretch Goals_**
+- [ ] More Final Fantasy * a e s t h e t i c *
+
+---
 ## **_Screenshots:_**
 ![Screenshot](assets/TTT2.png)
----
-
-## **_Stretch Goals_**
-
-- [ ] More Final Fantasy * a e s t h e t i c *
