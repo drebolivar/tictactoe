@@ -1,6 +1,6 @@
 
-## **Tic-Tac-Toe**
-## Andres 'Dre' Bolivar | [06/25/2022]
+### **Tic-Tac-Toe**
+### Andres 'Dre' Bolivar | [06/25/2022]
 ### [Github](http://www.github.com/drebolivar) | [Portfolio](http://drebolivar.github.io/portfolio) | [LinkedIn](http://www.linkedin.com/in/drebolivar) | [Instagram](http://www.instagram.com/dredose) 
 
 ---
